@@ -65,8 +65,8 @@ module.exports = configure(function (ctx) {
 
       // https://quasar.dev/quasar-cli/handling-webpack
       // "chain" is a webpack-chain object https://github.com/neutrinojs/webpack-chain
-      chainWebpack (/* chain */) {
-        //
+      chainWebpack(chain) {
+        chain.devtool("eval-cheap-source-map");
       },
     },
 
