@@ -19,7 +19,13 @@ export default {
   },
   methods: {
     ...mapMutations('main_three', ["RESIZE"]),
-    ...mapActions('main_three', ["INIT", "ANIMATE"])
+    ...mapActions('main_three', ["INIT", "ANIMATE"]),
+    onResize() {
+      this.RESIZE({
+        width: this.$el.offsetWidth,
+        height: this.$el.offsetHeight
+      });
+    }
   },
 
    mounted() {
@@ -29,12 +35,7 @@ export default {
        el: this.$el
      }).then(() => {
        this.ANIMATE();
-       window.addEventListener("resize", () => {
-         this.RESIZE({
-           width: this.$el.offsetWidth,
-           height: this.$el.offsetHeight
-         });
-       }, true);
+       window.addEventListener("resize", this.onResize, true);
 
        // trigger first resize for initial draw
        this.RESIZE({
@@ -42,7 +43,11 @@ export default {
          height: this.$el.offsetHeight,
        })
      });
-  }
+  },
+
+  beforeUnmount() {
+    window.removeEventListener("resize", this.onResize, true);
+  },
 }
 </script>
 
