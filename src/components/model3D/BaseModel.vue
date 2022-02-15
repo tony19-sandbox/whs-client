@@ -22,22 +22,22 @@ export default {
     ...mapActions('main_three', ["INIT", "ANIMATE"])
   },
 
-  // mounted() {
-  //   this.INIT({
-  //     width: this.$el.offsetWidth, // pobieramy width i height bieżacego elementu html (class='viewport'). OffsetWidth/Height podaje szer./wys. elementu, odnosząca się do układu strony (łącznie z obramowaniem, paskiem przewijania, margianesem, CSSem etc.)
-  //     width: this.$el.offsetHeight,
-  //     el: this.$el // this.$el odnosi się do bieżącego elementu html czyli tu do viewport, w którym będzie nasza scena
-  //   }).then(() => {
-  //     this.ANIMATE();
-  //     window.addEventListener("resize", () => {
-  //       this.RESIZE({
-  //         width: this.$el.offsetWidth,
-  //         height: this.$el.offsetHeight
-  //       });
-  //     }, true);
+   mounted() {
+     this.INIT({
+       width: this.$el.offsetWidth,
+       width: this.$el.offsetHeight,
+       el: this.$el
+     }).then(() => {
+       this.ANIMATE();
+       window.addEventListener("resize", () => {
+         this.RESIZE({
+           width: this.$el.offsetWidth,
+           height: this.$el.offsetHeight
+         });
+       }, true);
 
-  //   });
-  // }
+     });
+  }
 }
 </script>
 
