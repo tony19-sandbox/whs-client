@@ -2,7 +2,7 @@
     <q-footer class="bg-dark">
         <q-toolbar>
             <q-toolbar-title class='text-center text-grey-8'>
-                &copy; {{ new Date().getFullYear() }}  <!-- - Powered by Kamil Glowka  -->
+                &copy; {{ new Date().getFullYear() }}
             </q-toolbar-title>
         </q-toolbar>
     </q-footer>
