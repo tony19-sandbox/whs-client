@@ -36,6 +36,11 @@ export default {
          });
        }, true);
 
+       // trigger first resize for initial draw
+       this.RESIZE({
+         width: this.$el.offsetWidth,
+         height: this.$el.offsetHeight,
+       })
      });
   }
 }
