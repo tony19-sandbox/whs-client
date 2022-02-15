@@ -1,10 +1,6 @@
 <template>
     <q-header class="bg-dark">
         <q-toolbar>
-            <!-- <q-img
-                src="~assets/logoHWL.png"
-                class="q-ml-sm"
-                width="140px" /> -->
 
             <q-space />
 
