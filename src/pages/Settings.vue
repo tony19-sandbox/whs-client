@@ -1,6 +1,6 @@
 <template>
   <q-page class="flex flex-center">
-    Ustawienia
+    Settings
   </q-page>
 </template>
 
